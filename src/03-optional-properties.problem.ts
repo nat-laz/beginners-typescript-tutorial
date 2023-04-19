@@ -1,6 +1,10 @@
 import { expect, it } from "vitest";
 
-export const getName = (params: { first: string; last: string }) => {
+
+// ----- "?" -  is used to declare an optional parameter in a function or method.
+// This means that the parameter can be omitted when calling the function or method, and its value will be undefined.
+
+export const getName = (params: { first: string; last?: string }) => {
   if (params.last) {
     return `${params.first} ${params.last}`;
   }
