@@ -1,7 +1,9 @@
 import { expect, it } from "vitest";
 import { Equal, Expect } from "./helpers/type-utils";
 
-const guitarists = new Set();
+//In TypeScript, new Set<string>() creates a new instance of a Set object. A Set is a built-in JavaScript object that allows you to store UNIQUE values of any type, whether primitive or object references. When using a Set with TypeScript, you can specify the type of the values it should contain by providing a type parameter inside the angle brackets (e.g., <string>).
+const guitarists = new Set<string>() ;
+
 
 guitarists.add("Jimi Hendrix");
 guitarists.add("Eric Clapton");
