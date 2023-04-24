@@ -1,7 +1,15 @@
 import { expect, it } from "vitest";
 
+interface Cache {
+  [id: string] : string;
+}
+
+
 const createCache = () => {
-  const cache = {};
+  //another solution will be:
+  //Record<Keys, Type> Constructs an object type whose property keys are Keys and whose property values are Type. This utility can be used to map the properties of a type to another type.
+  //  const cache : Record<string, string> = {};
+  const cache : Cache = {};
 
   const add = (id: string, value: string) => {
     cache[id] = value;

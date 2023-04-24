@@ -1,3 +1,4 @@
+import { promises } from "dns";
 import { expect, it } from "vitest";
 
 interface User {
@@ -6,9 +7,12 @@ interface User {
   lastName: string;
 }
 
+type CreateUser = () => Promise<string> ;
+type GetUser = (id: string) => Promise<User>;
+
 const createThenGetUser = async (
-  createUser: unknown,
-  getUser: unknown,
+  createUser:  CreateUser,
+  getUser: GetUser,
 ): Promise<User> => {
   const userId: string = await createUser();
 
